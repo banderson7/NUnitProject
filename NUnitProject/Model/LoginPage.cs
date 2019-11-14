@@ -13,7 +13,7 @@ namespace NUnitProject.Model
 
         public bool IsLoginFormDisplayed()
         {
-            return driver.FindElement(loginForm).Displayed;
+            return IsDisplayed(loginForm);
         }
     }
 }

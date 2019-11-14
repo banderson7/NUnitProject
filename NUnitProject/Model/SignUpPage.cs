@@ -13,7 +13,7 @@ namespace NUnitProject.Model
 
         public bool IsRegisterFormDisplayed()
         {
-            return driver.FindElement(registerForm).Displayed;
+            return IsDisplayed(registerForm);
         }
     }
 }
