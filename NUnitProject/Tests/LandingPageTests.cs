@@ -53,7 +53,7 @@ namespace NUnitProject.Tests
 
             SignUpPage signUpPage = landingPage.ClickSignUp();
 
-            Assert.True(signUpPage.IsRegisterDisplayed());
+            Assert.True(signUpPage.IsRegisterFormDisplayed());
         }
 
         [Test]
