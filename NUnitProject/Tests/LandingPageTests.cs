@@ -45,5 +45,25 @@ namespace NUnitProject.Tests
 
             Assert.AreEqual(expectedLabel, landingPage.GetLoginButtonText());
         }
+
+        [Test]
+        public void SignUpButton_NavigatesToSignUpPage()
+        {
+            LandingPage landingPage = new LandingPage(driver);
+
+            SignUpPage signUpPage = landingPage.ClickSignUp();
+
+            Assert.True(signUpPage.IsRegisterDisplayed());
+        }
+
+        [Test]
+        public void LoginButton_NavigatesToLoginPage()
+        {
+            LandingPage landingPage = new LandingPage(driver);
+
+            LoginPage loginPage = landingPage.ClickLogin();
+
+            Assert.True(loginPage.IsLoginFormDisplayed());
+        }
     }
 }

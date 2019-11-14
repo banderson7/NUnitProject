@@ -3,48 +3,36 @@ using OpenQA.Selenium;
 
 namespace NUnitProject.Model
 {
-    public class LandingPage
+    public class LandingPage : BasePage
     {
-        private IWebDriver driver;
 
         private By header = By.TagName("h1");
         private By subHeader = By.ClassName("lead");
         private By signUpButton = By.CssSelector("a[class='btn btn-lg btn-info mr-2']");
         private By loginButton = By.CssSelector("a[class='btn btn-lg btn-light']");
 
-        public LandingPage(IWebDriver driver)
+        public LandingPage(IWebDriver driver) : base(driver)
         {
-            this.driver = driver;
         }
 
-        public String GetHeaderText()
-        {
-            return driver.FindElement(header).Text;
-        }
+        public String GetHeaderText() => driver.FindElement(header).Text;
 
-        public String GetSubHeaderText()
-        {
-            return driver.FindElement(subHeader).Text;
-        }
+        public String GetSubHeaderText() => driver.FindElement(subHeader).Text;
 
-        public String GetSignUpButtonText()
-        {
-            return driver.FindElement(signUpButton).Text;
-        }
+        public String GetSignUpButtonText() => driver.FindElement(signUpButton).Text;
+        
+        public String GetLoginButtonText() => driver.FindElement(loginButton).Text;
 
-        public String GetLoginButtonText()
-        {
-            return driver.FindElement(loginButton).Text;
-        }
-
-        public void ClickSignUp()
+        public SignUpPage ClickSignUp()
         {
             driver.FindElement(signUpButton).Click();
+            return new SignUpPage(driver);
         }
 
-        public void ClickLogin()
+        public LoginPage ClickLogin()
         {
             driver.FindElement(loginButton).Click();
+            return new LoginPage(driver);
         }
     }
 }
