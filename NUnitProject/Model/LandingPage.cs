@@ -15,23 +15,23 @@ namespace NUnitProject.Model
         {
         }
 
-        public String GetHeaderText() => driver.FindElement(header).Text;
+        public String GetHeaderText() => GetText(header);
 
-        public String GetSubHeaderText() => driver.FindElement(subHeader).Text;
+        public String GetSubHeaderText() => GetText(subHeader);
 
-        public String GetSignUpButtonText() => driver.FindElement(signUpButton).Text;
-        
-        public String GetLoginButtonText() => driver.FindElement(loginButton).Text;
+        public String GetSignUpButtonText() => GetText(signUpButton);
+
+        public String GetLoginButtonText() => GetText(loginButton);
 
         public SignUpPage ClickSignUp()
         {
-            driver.FindElement(signUpButton).Click();
+            Click(signUpButton);
             return new SignUpPage(driver);
         }
 
         public LoginPage ClickLogin()
         {
-            driver.FindElement(loginButton).Click();
+            Click(loginButton);
             return new LoginPage(driver);
         }
     }
