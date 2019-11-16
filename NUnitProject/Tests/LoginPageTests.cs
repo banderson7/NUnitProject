@@ -8,6 +8,10 @@ namespace NUnitProject.Tests
 {
     public class LoginPageTests : BaseTest
     {
+        public LoginPageTests(string browser) : base(browser)
+        {
+        }
+
         [Test]
         public void Submit_EmptyEmailError()
         {

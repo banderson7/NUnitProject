@@ -6,6 +6,10 @@ namespace NUnitProject.Tests
 {
     public class LandingPageTests : BaseTest
     {
+        public LandingPageTests(string browser) : base(browser)
+        {
+        }
+
         [Test]
         public void Header_HasExpectedText()
         {

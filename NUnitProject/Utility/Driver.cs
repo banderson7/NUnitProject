@@ -6,9 +6,14 @@ namespace NUnitProject.Utility
 {
     public static class Driver
     {
-        public static IWebDriver StartDriver()
+        public static IWebDriver StartDriver(string browser)
         {
-            return new ChromeDriver();
+            if (browser == "chrome")
+                return new ChromeDriver();
+            if (browser == "firefox")
+                return new FirefoxDriver();
+            else
+                return new ChromeDriver();
         }
     }
 }
