@@ -19,5 +19,8 @@
     <Folder Include="Tests\" />
     <Folder Include="Model\" />
     <Folder Include="Utility\" />
+    <Folder Include="Model\Page\" />
+    <Folder Include="Model\Objects\" />
+    <Folder Include="Data\" />
   </ItemGroup>
 </Project>
